@@ -111,3 +111,54 @@ a {
   mix-blend-mode: multiply;
   color: rgb(0, 255, 235);
 }
+
+#roomLegendR {
+  position: absolute;
+  display: block;
+  z-index: 50;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  left: 2.5%;
+  top: 6%;
+  user-select: none;
+  mix-blend-mode: multiply;
+  color: rgb(255, 0, 0);
+}
+#roomLegendG {
+  position: absolute;
+  display: block;
+  z-index: 49;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  left: 3%;
+  top: 6%;
+  user-select: none;
+  mix-blend-mode: multiply;
+  color: rgb(0, 255, 235);
+}
+
+#helperR {
+  position: absolute;
+  display: block;
+  z-index: 50;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  left: 60%;
+  top: 2%;
+  user-select: none;
+  mix-blend-mode: multiply;
+  color: rgb(255, 0, 0);
+}
+
+#helperG {
+  position: absolute;
+  display: block;
+  z-index: 50;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  left: 60.5%;
+  top: 2%;
+  user-select: none;
+  mix-blend-mode: multiply;
+  color: rgb(0, 255, 235);
+}
