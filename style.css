@@ -234,6 +234,7 @@ a {
   left: 90%;
   padding: 1px;
   cursor: pointer;
+  z-index: 99;
 }
 
 .tokenCatTitle {
