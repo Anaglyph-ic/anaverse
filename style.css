@@ -27,6 +27,10 @@ a {
   z-index: 9999;
 }
 
+#header {
+  border-bottom: 1px solid gray;
+}
+
 #anavTooltip {
   z-index: 0;
   position: absolute;
@@ -39,8 +43,8 @@ a {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 100;
   cursor: auto;
-  display: grid;
-  grid-template-rows: 30% 70%;
+  display: none;
+  grid-template-rows: 25% 75%;
   gap: 0px 0px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -49,6 +53,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0px 0px;
+  overflow-y: auto;
 }
 
 .iterDiv {
@@ -199,4 +204,41 @@ a {
   font-size: 60px;
   font-style: italic;
   font-weight: 100;
+  overflow-y: hidden;
+}
+
+#profilePic {
+  margin: auto;
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  border: 1px solid black;
+}
+
+#alias {
+  text-align: center;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2px;
+  border: 1px solid black;
+}
+
+#walletSync {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 90%;
+  padding: 1px;
+  cursor: pointer;
+}
+
+.tokenCatTitle {
+  text-align: center;
+  font-weight: bold;
+  padding: 5%;
+  font-size: 20px;
 }
