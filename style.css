@@ -235,6 +235,7 @@ a {
   padding: 1px;
   cursor: pointer;
   z-index: 99;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .tokenCatTitle {
