@@ -63,9 +63,10 @@ a {
 }
 
 .gentkProfiles {
-  padding: 3%;
   display: block;
   margin: auto;
+  margin-top: 3%;
+  width: 200px;
 }
 
 .thumbTitle {
@@ -73,13 +74,21 @@ a {
   font-style: italic;
   font-weight: 700;
   text-align: center;
+  width: 200px;
+  background-color: rgba(20, 20, 20, 0.1);
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
 }
 
 .thumbnail {
-  padding: 1%;
+  width: 200px;
+  padding: 0%;
   cursor: pointer;
   display: block;
   margin: auto;
+  border: 1px solid black;
+  margin-top: 3%;
 }
 
 .iterNameDiv {
