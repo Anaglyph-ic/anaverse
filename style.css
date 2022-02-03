@@ -8,12 +8,10 @@ body {
 
 a:visited {
   color: darkred;
-  font-size: 14px;
 }
 
 a {
   color: red;
-  font-size: 14px;
 }
 
 #cont {
@@ -86,18 +84,18 @@ a {
   padding: 0%;
   cursor: pointer;
   display: block;
-  margin: auto;
   border: 1px solid black;
   margin-top: 3%;
 }
 
 .iterNameDiv {
-  padding: 5%;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.6);
+  top: -80px;
+  position: relative;
+  font-size: 12px;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  display: inline-grid;
 }
 
 .gentkDesc {
@@ -141,7 +139,6 @@ a {
   mix-blend-mode: multiply;
   color: rgb(255, 0, 0);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-
   font-size: 12px;
 }
 
@@ -252,4 +249,18 @@ a {
   font-weight: bold;
   padding: 5%;
   font-size: 20px;
+}
+
+.tw {
+  width: 20%;
+  font-size: 9px;
+  top: 20%;
+  padding-left: 1%;
+}
+
+.gentkCell {
+  display: inline-block;
+  max-width: 200px;
+  margin-bottom: -200px;
+  margin-top: -25px;
 }
