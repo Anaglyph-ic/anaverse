@@ -52,6 +52,7 @@ a {
   grid-template-columns: 1fr 1fr;
   gap: 0px 0px;
   overflow-y: auto;
+  align-items: start;
 }
 
 .iterDiv {
@@ -263,4 +264,26 @@ a {
   max-width: 200px;
   margin-bottom: -200px;
   margin-top: -25px;
+}
+#filter {
+  list-style: none;
+  padding: 5px;
+  margin: 10px;
+  max-width: 200px;
+  border: 1px solid black;
+  font-size: 12px;
+}
+#toolPath {
+  padding: 2%;
+  display: block;
+}
+
+.toolPathItem {
+  cursor: pointer;
+  display: inline-block;
+}
+.tokensDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
