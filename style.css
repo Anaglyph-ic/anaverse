@@ -287,3 +287,16 @@ a {
   flex-direction: column;
   align-items: center;
 }
+
+#hider {
+  width: 110%;
+  height: 110%;
+  background-color: white;
+  display: block;
+  position: absolute;
+  left: -5%;
+  top: -5%;
+  opacity: 1;
+  transition: opacity 1s ease-out;
+  z-index: 30000;
+}
