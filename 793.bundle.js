@@ -1,0 +1,1 @@
+onmessage=function(e){import(e.data.skyurl).then((a=>{var s=e.data.side,t=new OffscreenCanvas(4*s,3*s);self.document={createElement:()=>t};var n=a.skybox(e.data.side,e.data.hash);postMessage({objkt:n,side:s})}))};

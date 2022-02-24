@@ -175,7 +175,18 @@ a {
 }
 
 #links {
-  opacity: 0;
+  opacity: 1;
+  z-index: 35;
+  top: calc(90% - 20px);
+  left: 7%;
+  position: absolute;
+}
+
+.hiderlinks {
+  color: black;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
 }
 
 #docG {
