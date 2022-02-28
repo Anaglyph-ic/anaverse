@@ -432,3 +432,9 @@ a {
     margin-left: -2px;
   }
 }
+
+.peintureContent {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
