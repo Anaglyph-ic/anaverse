@@ -110,7 +110,7 @@ a {
 #firstPersonLegendR {
   position: absolute;
   display: block;
-  z-index: 50;
+  z-index: 45;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 12px;
   left: 60%;
@@ -136,7 +136,7 @@ a {
   position: absolute;
   display: block;
   user-select: none;
-  z-index: 50;
+  z-index: 45;
   mix-blend-mode: multiply;
   color: rgb(255, 0, 0);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -331,13 +331,13 @@ a {
 }
 
 #hider {
-  width: 110%;
-  height: 110%;
+  width: 100%;
+  height: 100%;
   background-color: white;
   display: block;
   position: absolute;
-  left: -5%;
-  top: -5%;
+  left: 0px;
+  top: 0px;
   opacity: 1;
   z-index: 50;
 }
@@ -346,8 +346,7 @@ a {
   position: absolute;
   margin: auto;
   top: 30%;
-  left: calc(55% - 235px);
-  font-family: monospace;
+  font-family: sans-serif;
   font-weight: bolder;
   opacity: 0;
   text-align: center;
@@ -358,9 +357,8 @@ a {
 #enter {
   position: absolute;
   margin: auto;
-  top: 55%;
-  left: calc(55% - 120px);
-  font-family: monospace;
+  top: 60%;
+  font-family: sans-serif;
   font-weight: bolder;
   opacity: 0;
   text-align: center;
@@ -438,3 +436,71 @@ a {
   padding: 0px;
   list-style: none;
 }
+
+@media (orientation: landscape) {
+  #loader-button {
+    display: none;
+  }
+}
+
+@media (orientation: portrait) {
+  #loader-button {
+    position: absolute;
+    top: 30%;
+    left: calc(100% - 30px);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    background: radial-gradient(
+      rgba(215, 225, 255, 0.7) 0%,
+      rgba(215, 225, 255, 0.5) 100%
+    );
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border-radius: 50%;
+    background-size: cover;
+    border: 1px solid white;
+    cursor: pointer;
+    z-index: 49;
+  }
+
+  #mobile-rotation {
+    position: absolute;
+    top: calc(100% - 100px);
+    left: 0px;
+    font-size: large;
+    background: radial-gradient(
+      rgba(215, 225, 255, 0.7) 0%,
+      rgba(215, 225, 255, 0.5) 100%
+    );
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: cover;
+    border: 1px solid white;
+    cursor: pointer;
+    z-index: 49;
+  }
+
+  #mobile-position {
+    position: absolute;
+    top: calc(100% - 100px);
+    left: calc(100% - 100px);
+    font-size: large;
+    background: radial-gradient(
+      rgba(215, 225, 255, 0.7) 0%,
+      rgba(215, 225, 255, 0.5) 100%
+    );
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: cover;
+    border: 1px solid white;
+    cursor: pointer;
+    z-index: 49;
+  }
+}
+
+/*Touchpad css
+https://github.com/mese79/TouchControls/blob/master/css/touch-pad.css
+*/
