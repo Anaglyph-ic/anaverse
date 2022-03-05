@@ -460,11 +460,13 @@ a {
     border: 1px solid white;
     cursor: pointer;
     z-index: 49;
+    max-width: 500px;
+    max-height: 500px;
   }
 
   #mobile-rotation {
     position: absolute;
-    left: 0px;
+    left: 60%;
     background: radial-gradient(
       rgba(215, 225, 255, 0.7) 0%,
       rgba(215, 225, 255, 0.5) 100%
@@ -474,11 +476,13 @@ a {
     border: 1px solid white;
     cursor: pointer;
     z-index: 49;
+    max-width: 500px;
+    max-height: 500px;
   }
 
   #mobile-position {
     position: absolute;
-    left: 60%;
+    left: 0px;
     background: radial-gradient(
       rgba(215, 225, 255, 0.7) 0%,
       rgba(215, 225, 255, 0.5) 100%
