@@ -437,81 +437,79 @@ a {
   list-style: none;
 }
 
-@media (orientation: landscape) {
-  #loader-button {
-    display: none;
-  }
+#mobile-control {
+  display: none;
 }
 
-@media (orientation: portrait) {
-  #loader-button {
-    position: absolute;
-    top: 30%;
-    left: 90%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
-    background: radial-gradient(
-      rgba(215, 225, 255, 0.7) 0%,
-      rgba(215, 225, 255, 0.5) 100%
-    );
-    text-align: center;
-    border-radius: 50%;
-    background-size: cover;
-    border: 1px solid white;
-    cursor: pointer;
-    z-index: 49;
-    max-width: 500px;
-    max-height: 500px;
-  }
+#loader-button {
+  position: absolute;
+  top: 30%;
+  left: 90%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  background: radial-gradient(
+    rgba(215, 225, 255, 0.7) 0%,
+    rgba(215, 225, 255, 0.5) 100%
+  );
+  text-align: center;
+  border-radius: 50%;
+  background-size: cover;
+  border: 1px solid white;
+  cursor: pointer;
+  z-index: 49;
+  max-width: 500px;
+  max-height: 500px;
+}
 
-  #mobile-rotation {
-    position: absolute;
-    left: 60%;
-    background: radial-gradient(
-      rgba(215, 225, 255, 0.7) 0%,
-      rgba(215, 225, 255, 0.5) 100%
-    );
-    border-radius: 50%;
-    background-size: cover;
-    border: 1px solid white;
-    cursor: pointer;
-    z-index: 49;
-    max-width: 500px;
-    max-height: 500px;
-  }
+#mobile-rotation {
+  position: absolute;
+  left: 60%;
+  background: radial-gradient(
+    rgba(215, 225, 255, 0.7) 0%,
+    rgba(215, 225, 255, 0.5) 100%
+  );
+  border-radius: 50%;
+  background-size: cover;
+  border: 1px solid white;
+  cursor: pointer;
+  z-index: 49;
+  max-width: 400px;
+  max-height: 400px;
+}
 
-  #mobile-position {
-    position: absolute;
-    left: 0px;
-    background: radial-gradient(
-      rgba(215, 225, 255, 0.7) 0%,
-      rgba(215, 225, 255, 0.5) 100%
-    );
-    border-radius: 50%;
-    background-size: cover;
-    border: 1px solid white;
-    cursor: pointer;
-    z-index: 49;
-  }
-  #mobile-controls {
-    overflow: hidden;
-  }
+#mobile-position {
+  position: absolute;
+  left: 0px;
+  background: radial-gradient(
+    rgba(215, 225, 255, 0.7) 0%,
+    rgba(215, 225, 255, 0.5) 100%
+  );
+  border-radius: 50%;
+  background-size: cover;
+  border: 1px solid white;
+  cursor: pointer;
+  z-index: 49;
+  max-width: 400px;
+  max-height: 400px;
+}
+#mobile-controls {
+  overflow: hidden;
+}
 
-  #mobile-jetpack {
-    background: radial-gradient(
-      rgba(215, 225, 255, 0.7) 0%,
-      rgba(215, 225, 255, 0.5) 100%
-    );
-    position: absolute;
-    top: 90%;
-    left: 40%;
-    width: 20%;
-    height: 10%;
-    border: 1px solid white;
-    cursor: pointer;
-    z-index: 49;
-    background-size: cover;
-  }
+#mobile-jetpack {
+  background: radial-gradient(
+    rgba(215, 225, 255, 0.7) 0%,
+    rgba(215, 225, 255, 0.5) 100%
+  );
+  position: absolute;
+  top: 90%;
+  left: 40%;
+  width: 20%;
+  height: 10%;
+  border: 1px solid white;
+  cursor: pointer;
+  z-index: 49;
+  background-size: cover;
 }
 
 /*Touchpad css
