@@ -537,8 +537,8 @@ a {
   border: 1px solid black;
   font-family: Georgia, "Times New Roman", Times, serif;
   width: 25%;
-  min-width: 25%;
-  min-width: 65%;
+  min-width: 20%;
+  min-width: 35%;
   font-size: smaller;
 }
 
