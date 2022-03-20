@@ -378,7 +378,8 @@ a {
   text-align: right;
   display: block;
   font-size: 10px;
-  cursor: none;
+  cursor: auto;
+  pointer-events: none;
 }
 
 #enterG {
@@ -524,6 +525,19 @@ a {
   cursor: pointer;
   z-index: 49;
   background-size: cover;
+}
+
+#itemMetaData {
+  display: none;
+  top: 50%;
+  left: 5%;
+  position: absolute;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid black;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  width: 25%;
+  font-size: smaller;
 }
 
 /*Touchpad css
