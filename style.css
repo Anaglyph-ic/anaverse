@@ -27,6 +27,7 @@ a {
 
 #header {
   border-bottom: 1px solid gray;
+  background-color: white;
 }
 
 #anavTooltip {
@@ -42,17 +43,16 @@ a {
   font-weight: 100;
   cursor: auto;
   display: none;
-  grid-template-rows: 25% 75%;
+  grid-template-rows: 10% 90%;
   gap: 0px 0px;
   overflow-y: auto;
   overflow-x: hidden;
 }
 #tokens {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0px 0px;
   overflow-y: auto;
-  align-items: start;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 .iterDiv {
@@ -62,35 +62,38 @@ a {
 }
 
 .gentkProfiles {
-  display: block;
-  margin: auto;
-  margin-top: 3%;
-  width: 200px;
+  padding: 1%;
+  min-width: 200px;
+  max-height: 204px;
 }
 
 .thumbTitle {
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: italic;
-  font-weight: 700;
-  text-align: center;
-  width: 200px;
-  background-color: rgba(20, 20, 20, 0.1);
-  border-left: 1px solid black;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
+  padding: 3%;
+  
+  left:1px;
+  background-color: rgba(255, 255, 255, 0.9);
+  top: -80px;
+  position: relative;
+  font-size: 12px;
+  text-align: left;
+  display: inline-grid;
 }
 
 .thumbnail {
-  width: 200px;
+  width: 100%;
+  height: 100%;
+  min-width: 150px;
+  max-width: 200px;
   padding: 0%;
   cursor: pointer;
   display: block;
-  border: 1px solid black;
+  border-radius: 5px;
+  border: 1px solid rgb(200,200,200);
   margin-top: 3%;
 }
 
 .iterNameDiv {
-  width: 200px;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.6);
   top: -80px;
   position: relative;
@@ -235,32 +238,34 @@ a {
 }
 
 #title {
-  padding-top: 3%;
+  padding-top: 1%;
   padding-left: 250px;
-  font-size: 60px;
+  font-size: 40px;
   font-style: italic;
   font-weight: 100;
   overflow-y: hidden;
 }
 
 #profilePic {
-  margin: auto;
   display: block;
   border-radius: 50%;
   overflow: hidden;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   background-size: cover;
-  border: 1px solid black;
+  border: 1px solid rgb(200 200 200);
 }
 
 #alias {
   text-align: center;
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 2px;
-  border: 1px solid black;
+  margin: 10px;
+  height: 15px;
+  padding: 5px;
+  border: 1px solid rgb(200 200 200);
+  border-radius: 3px;
+  background-color: white;
 }
 
 #galleryExtract {
@@ -276,22 +281,21 @@ a {
 }
 
 #walletSync {
-  display: block;
+  display:inline-flex;
   position: absolute;
-  top: 20px;
-  left: 90%;
-  padding: 1px;
+  top: 0px;
+  padding:5px;
+  height:10%;
+  left: 80%;
   cursor: pointer;
   z-index: 99;
   font-family: Arial, Helvetica, sans-serif;
   opacity: 0;
 }
 
-.tokenCatTitle {
-  text-align: center;
-  font-weight: bold;
-  padding: 5%;
-  font-size: 20px;
+.tokenCatTitle {  
+  border-top: 1px solid rgb(200,200,200);
+  padding: 1%;
 }
 
 .tw {
@@ -306,6 +310,7 @@ a {
   max-width: 200px;
   margin-bottom: -200px;
   margin-top: -25px;
+  padding:1%;
 }
 #filter {
   list-style: none;
@@ -325,9 +330,13 @@ a {
   display: inline-block;
 }
 .tokensDiv {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: inline-flex;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
 }
 
 #hider {
@@ -540,6 +549,26 @@ a {
   min-width: 20%;
   min-width: 35%;
   font-size: smaller;
+}
+
+
+#highlight{
+  width: 100%;
+  display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+#highlightImg{
+  width:40%;
+  height:40%;
+  padding:5%;
+}
+#highlightDesc{
+  width:40%;
+  height:40%;
+  padding:5%;
 }
 
 /*Touchpad css
