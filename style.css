@@ -629,6 +629,53 @@ a {
   padding:5%;
 }
 
+#walletDetail{
+  position: absolute;
+  display: none;
+  margin-left: calc(50% - 225px);
+  margin-top: 100px;
+  width: 450px;
+  height: 450px;
+  background-color: white;
+  border: 2px solid red;
+  pointer-events: all;
+  user-select: none;
+  grid-template-columns: 50% 50%;
+}
+
+.syncDiv{
+  display: flex;
+  margin:5px;
+  border: 2px dashed cyan;
+  flex-direction: column;
+  align-items: center;
+}
+
+.walletSyncer{
+  display: flex;
+  width:100%;
+  height: 280px;
+  font-family: sans-serif;
+  text-align: center;
+  cursor:pointer;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  word-break: break-all;
+
+}
+
+.walletPics {
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 50%;
+  height: 50%;
+  background-size: cover;
+  border: 1px solid rgb(200 200 200);
+}
+
+
 /*Touchpad css
 https://github.com/mese79/TouchControls/blob/master/css/touch-pad.css
 */
