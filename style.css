@@ -717,9 +717,10 @@ a {
 .galLoaderButton{
   padding: 5px;
     background: white;
-    border: 1px solid black;
+    border: 1px solid red;
     margin: 10px;
     cursor: pointer;
+    text-align: center
 }
 
 /*Touchpad css
