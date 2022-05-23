@@ -554,6 +554,47 @@ a {
   max-height: 500px;
 }
 
+#gallery-button {
+  position: absolute;
+  top: 40%;
+  left: 90%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  background: radial-gradient(
+    rgba(215, 225, 255, 0.7) 0%,
+    rgba(215, 225, 255, 0.5) 100%
+  );
+  text-align: center;
+  border-radius: 50%;
+  background-size: cover;
+  border: 1px solid white;
+  cursor: pointer;
+  z-index: 49;
+  max-width: 500px;
+  max-height: 500px;
+}
+
+#hang-button {
+  position: absolute;
+  top: 40%;
+  left: 1%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  background: radial-gradient(
+    rgba(215, 225, 255, 0.7) 0%,
+    rgba(215, 225, 255, 0.5) 100%
+  );
+  text-align: center;
+  border-radius: 50%;
+  background-size: cover;
+  border: 1px solid white;
+  cursor: pointer;
+  z-index: 49;
+  max-width: 500px;
+  max-height: 500px;
+}
+
+
 #mobile-rotation {
   position: absolute;
   left: 60%;
