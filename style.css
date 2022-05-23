@@ -568,6 +568,7 @@ a {
   z-index: 49;
   max-width: 400px;
   max-height: 400px;
+  pointer-events: none;
 }
 
 #mobile-position {
@@ -584,6 +585,7 @@ a {
   z-index: 49;
   max-width: 400px;
   max-height: 400px;
+  pointer-events: none;
 }
 #mobile-controls {
   overflow: hidden;
@@ -595,9 +597,9 @@ a {
     rgba(215, 225, 255, 0.5) 100%
   );
   position: absolute;
-  top: 90%;
-  left: 40%;
-  width: 20%;
+  top: 60%;
+  left: 1%;
+  width: 5%;
   height: 10%;
   border: 1px solid white;
   cursor: pointer;
