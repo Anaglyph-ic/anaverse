@@ -726,3 +726,10 @@ a {
 /*Touchpad css
 https://github.com/mese79/TouchControls/blob/master/css/touch-pad.css
 */
+
+#rotScreen{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40%;
+}
