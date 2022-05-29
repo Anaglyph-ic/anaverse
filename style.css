@@ -407,9 +407,12 @@ a {
 }
 
 #landingTitle {
-  position: absolute;
-  margin: auto;
-  top: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  height: 40%;
   font-family: sans-serif;
   font-weight: bolder;
   opacity: 0;
@@ -419,16 +422,19 @@ a {
 }
 
 #enter {
-  position: absolute;
-  margin: auto;
-  top: 60%;
+
   font-family: sans-serif;
   font-weight: bolder;
   opacity: 0;
   text-align: center;
-  display: none;
+  display: flex;
   font-size: 60px;
   cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 20%;
+  pointer-events: none;
 }
 
 #perfMode {
@@ -446,8 +452,10 @@ a {
 }
 
 #connectInfo {
-  position: relative;
-  margin-left: auto;
+  position: absolute;
+  width: 30%;
+  text-align: right;
+  margin-left:65%;
   margin-right: 5%;
   top: 75%;
   font-family: monospace;
