@@ -757,6 +757,13 @@ a {
   justify-content: space-around;
 }
 
+#galleryClose{
+  position: absolute;
+  top: 10px;
+  left: 90%;
+cursor:pointer;
+}
+
 #galleryCreatorThb{
   pointer-events: none;
 }
