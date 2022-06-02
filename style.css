@@ -438,8 +438,8 @@ a {
 }
 
 #perfMode {
-  position: relative;
-  margin-left: auto;
+  position: absolute;
+  left: 70%;
   margin-right: 5%;
   top: 90%;
   font-family: monospace;
