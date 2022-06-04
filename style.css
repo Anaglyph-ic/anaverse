@@ -742,19 +742,20 @@ a {
   font-family: sans-serif;
   position: absolute;
   display: none;
-  margin-left: calc(50% - 225px);
+  margin-left: calc(50% - 125px);
   margin-top: 100px;
-  width: 450px;
-  height: 450px;
+  width: 250px;
+  height: 250px;
   background-color: white;
-  border: 2px solid red;
+  border: 1px solid black;
+  border-radius: 10px;
   pointer-events: all;
   user-select: none;
-  grid-template-columns: 50% 50%;
   align-content: center;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  box-shadow: 0px 0px 15px;
 }
 
 #galleryClose{
@@ -764,9 +765,7 @@ a {
 cursor:pointer;
 }
 
-#galleryCreatorThb{
-  pointer-events: none;
-}
+
 #saveGallery{
   cursor: pointer;
   font-weight: bold;
