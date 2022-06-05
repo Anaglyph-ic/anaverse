@@ -793,11 +793,11 @@ https://github.com/mese79/TouchControls/blob/master/css/touch-pad.css
 }
 
 #audio-radio{
-  
+  border-radius: 10px;
   width : 250px;
   height : auto;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid rgb(200 200 200);
   left: calc(100% - 270px);
   top: 20%;
   position: absolute;
