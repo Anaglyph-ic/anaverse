@@ -259,14 +259,18 @@ a {
 
 #toolback {
   position: absolute;
-  margin-top: 15%;
+  margin-top: 20px;
   background-color: white;
   cursor: pointer;
-  margin-left: 80%;
+  margin-left: calc(100% - 160px);
   font-size: 20px;
   font-style: italic;
   font-weight: 100;
   overflow-y: hidden;
+  padding: 5px;
+  border: 1px solid black;
+  display: none;
+  z-index: 2;
 }
 
 #walletPic {
