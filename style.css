@@ -685,6 +685,7 @@ a {
   min-width: 20%;
   min-width: 35%;
   font-size: smaller;
+  pointer-events: none;
 }
 
 
