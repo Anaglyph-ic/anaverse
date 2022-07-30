@@ -671,6 +671,9 @@ a {
   z-index: 49;
   background-size: cover;
 }
+#tutorial{
+  display: none;
+}
 
 #itemMetaData {
   display: none;
