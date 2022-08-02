@@ -812,6 +812,7 @@ cursor:pointer;
 }
 
 .galLoaderButton{
+  min-width: 200px;
   padding: 0px;
     background: white;
     border: 1px solid rgb(200,200,200);
@@ -819,6 +820,20 @@ cursor:pointer;
     cursor: pointer;
     text-align: center;
     border-radius: 5px;
+}
+
+#tutorial{
+  font-family: sans-serif;
+  display:none;
+ 
+  text-align: center;
+  display: flex;
+  font-size: 16px;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 20%;
 }
 
 /*Touchpad css
