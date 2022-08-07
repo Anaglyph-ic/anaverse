@@ -704,9 +704,7 @@ a {
   background-color: white;
   border: 1px solid black;
   font-family: Georgia, "Times New Roman", Times, serif;
-  width: 25%;
-  min-width: 20%;
-  min-width: 35%;
+  max-width: 35%;
   font-size: smaller;
   pointer-events: none;
 }
@@ -778,7 +776,8 @@ a {
     border: 2px dashed cyan;
   padding:5px;
   cursor:pointer;
-  
+  z-index: 10000;
+  background-color: white;
 }
 
 #walletContainer{
