@@ -834,6 +834,7 @@ cursor:pointer;
 
 .galLoaderButton{
   min-width: 200px;
+  max-width: 200px;
   padding: 0px;
     background: white;
     border: 1px solid rgb(200,200,200);
