@@ -894,3 +894,10 @@ https://github.com/mese79/TouchControls/blob/master/css/touch-pad.css
   align-items: center;
   font-size: 10px;
 }
+
+#info{
+  display: block;
+    z-index: 999;
+    position: absolute;
+   /* mix-blend-mode: screen;*/
+}
