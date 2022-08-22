@@ -897,7 +897,7 @@ https://github.com/mese79/TouchControls/blob/master/css/touch-pad.css
 
 #info{
   display: block;
-    z-index: 999;
+    z-index: 48;
     position: absolute;
-   /* mix-blend-mode: screen;*/
+   
 }
