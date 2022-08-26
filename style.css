@@ -393,12 +393,12 @@ a {
   display: inline-block;
 }
 .tokensDiv {
-  display: inline-flex;
+  display: flex;
     align-items: center;
     overflow-x: auto;
     overflow-y: hidden;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     width: 100%;
     min-height: 220px;
 }
