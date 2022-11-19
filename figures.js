@@ -1,1 +1,356 @@
-const genererFigures=t=>{let r="123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ",e=t.slice(2),s=new RegExp(".{"+(t.length/4|0)+"}","g");var h=((t,r,e,s)=>()=>{var h=((t|=0)+(r|=0)|0)+(s|=0)|0;return s=s+1|0,t=r^r>>>9,r=(e|=0)+(e<<3)|0,e=(e=e<<21|e>>>11)+h|0,(h>>>0)/4294967296})(...e.match(s).map((t=>{return e=t,[...e].reduce(((t,e)=>t*r.length+r.indexOf(e)|0),0);var e})));const i=[];class o{constructor(){this.grad=new Int16Array([1,1,0,-1,1,0,1,-1,0,-1,-1,0,1,0,1,-1,0,1,1,0,-1,-1,0,-1,0,1,1,0,-1,1,0,1,-1,0,-1,-1]);const t=new Uint8Array(256);this.perm=new Uint8Array(512);for(let r=0;r<256;r++)t[r]=r;for(let r=255;r>0;r--){const e=Math.floor((r+1)*h()),s=t[r];t[r]=t[e],t[e]=s}for(let r=0;r<512;r++)this.perm[r]=t[255&r]}noise(t,r,e){const s=.3333333*(t+r+e),h=t+s|0,i=r+s|0,o=e+s|0,a=.1666666*(h+i+o),n=t-(h-a),p=r-(i-a),g=e-(o-a);let l,m,d,c,w,u;n>=p?p>=g?(l=1,m=0,d=0,c=1,w=1,u=0):n>=g?(l=1,m=0,d=0,c=1,w=0,u=1):(l=0,m=0,d=1,c=1,w=0,u=1):p<g?(l=0,m=0,d=1,c=0,w=1,u=1):n<g?(l=0,m=1,d=0,c=0,w=1,u=1):(l=0,m=1,d=0,c=1,w=1,u=0);const f=n-l+.1666666,y=p-m+.1666666,M=g-d+.1666666,x=n-c+.3333333,A=p-w+.3333333,v=g-u+.3333333,U=n-.5,z=p-.5,F=g-.5,B=255&h,E=255&i,G=255&o,R=this.perm[B+this.perm[E+this.perm[G]]]%12*3,b=this.perm[B+l+this.perm[E+m+this.perm[G+d]]]%12*3,j=this.perm[B+c+this.perm[E+w+this.perm[G+u]]]%12*3,k=this.perm[B+1+this.perm[E+1+this.perm[G+1]]]%12*3;let q,C,D,H,I,J,K,L;return q=.6-n*n-p*p-g*g,q<0?I=0:(q*=q,I=q*q*(n*this.grad[R]+p*this.grad[R+1]+g*this.grad[R+2])),C=.6-f*f-y*y-M*M,C<0?J=0:(C*=C,J=C*C*(f*this.grad[b]+y*this.grad[b+1]+M*this.grad[b+2])),D=.6-x*x-A*A-v*v,D<0?K=0:(D*=D,K=D*D*(x*this.grad[j]+A*this.grad[j+1]+v*this.grad[j+2])),H=.6-U*U-z*z-F*F,H<0?L=0:(H*=H,L=H*H*(U*this.grad[k]+z*this.grad[k+1]+F*this.grad[k+2])),20*(I+J+K+L)+1}noises(t,r,e,s){let h=0;for(let i=0;i<t;i++)h+=this.noise(r*Math.pow(2,i),e*Math.pow(2,i),s*Math.pow(2,i));return h}}return(t=>{const r=new o;let e,s,h;new Uint8Array(2097152);for(let o=1;o<127;o++)for(let a=1;a<127;a++)for(let n=1;n<127;n++){let p=o/t,g=a/t,l=n/t;Math.pow(r.noises(1,5*p,5*g,5*l),3)<.5?h=0:(e=g<=.8?1:1.5-10*(g-.8),s=.1/(Math.pow(1.5*(p-.5),2)+Math.pow(1.5*(g-.5),2)+Math.pow(1.5*(l-.5),2)),h=r.noises(5,p,.5*g,l)*s*e*Math.pow(r.noise(3*(p+1),3*(g+1),3*(l+1)),2.5)),h>2.5&&i.push({geometry:{type:"BoxGeometry",args:[1,1,1]},pos:{x:1*o,y:1*a,z:1*n},rot:{x:0,y:0,z:0},lines:!0,hatch:!0,full:!1})}})(128),{figures:i,features:{}}};export{genererFigures};
+const genererFigures = (fxhash) => {
+  let alphabet = "123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ";
+  let b58dec = (str) =>
+    [...str].reduce(
+      (p, c) => (p * alphabet.length + alphabet.indexOf(c)) | 0,
+      0
+    );
+  let fxhashTrunc = fxhash.slice(2);
+  let regex = new RegExp(".{" + ((fxhash.length / 4) | 0) + "}", "g");
+  let hashes = fxhashTrunc.match(regex).map((h) => b58dec(h));
+  let sfc32 = (a, b, c, d) => {
+    return () => {
+      a |= 0;
+      b |= 0;
+      c |= 0;
+      d |= 0;
+      var t = (((a + b) | 0) + d) | 0;
+      d = (d + 1) | 0;
+      a = b ^ (b >>> 9);
+      b = (c + (c << 3)) | 0;
+      c = (c << 21) | (c >>> 11);
+      c = (c + t) | 0;
+      return (t >>> 0) / 4294967296;
+    };
+  };
+  var fxrand = sfc32(...hashes);
+
+  const figures = [];
+
+  const u = 1;
+
+  const random = fxrand;
+  const randint = (s, e = 0) => {
+    if (e === 0) {
+      e = s;
+      s = 0;
+    }
+    return Math.floor(s + random() * (e - s));
+  };
+  const randpos = (a) => {
+    return a[Math.floor(random() * a.length)];
+  };
+
+  const hsl2rgb = (h, s, l) => {
+    const a = s * Math.min(l, 1 - l);
+    const f = (n, k = (n + h / 30) % 12) =>
+      l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+    return [f(0), f(8), f(4)];
+  };
+
+  ////////////////////////// features ////////////////////////////
+
+  const struct = random() > 0.5 ? 1 : 2;
+  const caveNy = struct === 2 ? 5 : random() > 0.9 ? 15 : 5;
+  let cx = randint(360);
+  let cy = 35;
+  if (struct === 2 && random() > 0.5) cy = -15 - randint(45);
+  let hue = randpos([0, 20, 40, 60, 80, 160, 180, 200, 240, 260, 280]);
+  let rgb = hue === 0 ? [0.8, 0.8, 0.8] : hsl2rgb(hue, 0.5, 0.9);
+  let rgba = hue === 0 ? [0.8, 0.8, 0.8] : hsl2rgb(hue, 0.15, 0.7);
+  let lava = random() > 0.5 ? false : true;
+  let rez = randpos([16, 32, 64, 128, 128, 128, 128]);
+  let frag = random() > 0.9 ? true : false;
+
+  //let rez = Math.floor(16+random()*112)
+
+  const features = {
+    rgb,
+    rgba,
+    cx,
+    cy,
+    caveNy,
+    structure: struct === 1 ? "asteroid" : "meteroid",
+    caves: caveNy === 15 ? "horizontal" : "normal",
+    hue: hue,
+    lava: lava,
+    resolution: rez,
+    scraps: frag,
+  };
+  //console.log(fxhash);
+  //console.log(window.$fxhashFeatures);
+
+  ////////////////////////// noise ////////////////////////////
+
+  // Ref: http://webstaff.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf
+  const perm = new Uint32Array(512);
+  const grad = new Int32Array([
+    1, 1, 0, -1, 1, 0, 1, -1, 0, -1, -1, 0, 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0,
+    -1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 0, -1, -1,
+  ]);
+
+  {
+    const p = new Uint32Array(256);
+    for (let i = 0; i < 256; i++) p[i] = i;
+    for (let i = 255; i > 0; i--) {
+      const n = Math.floor((i + 1) * random());
+      const q = p[i];
+      p[i] = p[n];
+      p[n] = q;
+    }
+    for (let i = 0; i < 512; i++) perm[i] = p[i & 255];
+  }
+
+  const noise = (xin, yin, zin) => {
+    const s = (xin + yin + zin) * 0.3333333,
+      i = (xin + s) | 0,
+      j = (yin + s) | 0,
+      k = (zin + s) | 0,
+      t = (i + j + k) * 0.1666666,
+      X0 = i - t,
+      Y0 = j - t,
+      Z0 = k - t,
+      x0 = xin - X0,
+      y0 = yin - Y0,
+      z0 = zin - Z0;
+
+    let i1, j1, k1, i2, j2, k2;
+
+    if (x0 >= y0) {
+      if (y0 >= z0) {
+        i1 = 1;
+        j1 = 0;
+        k1 = 0;
+        i2 = 1;
+        j2 = 1;
+        k2 = 0;
+      } else if (x0 >= z0) {
+        i1 = 1;
+        j1 = 0;
+        k1 = 0;
+        i2 = 1;
+        j2 = 0;
+        k2 = 1;
+      } else {
+        i1 = 0;
+        j1 = 0;
+        k1 = 1;
+        i2 = 1;
+        j2 = 0;
+        k2 = 1;
+      }
+    } else {
+      if (y0 < z0) {
+        i1 = 0;
+        j1 = 0;
+        k1 = 1;
+        i2 = 0;
+        j2 = 1;
+        k2 = 1;
+      } else if (x0 < z0) {
+        i1 = 0;
+        j1 = 1;
+        k1 = 0;
+        i2 = 0;
+        j2 = 1;
+        k2 = 1;
+      } else {
+        i1 = 0;
+        j1 = 1;
+        k1 = 0;
+        i2 = 1;
+        j2 = 1;
+        k2 = 0;
+      }
+    }
+
+    const x1 = x0 - i1 + 0.1666666,
+      y1 = y0 - j1 + 0.1666666,
+      z1 = z0 - k1 + 0.1666666,
+      x2 = x0 - i2 + 0.3333333,
+      y2 = y0 - j2 + 0.3333333,
+      z2 = z0 - k2 + 0.3333333,
+      x3 = x0 - 0.5,
+      y3 = y0 - 0.5,
+      z3 = z0 - 0.5,
+      ii = i & 255,
+      jj = j & 255,
+      kk = k & 255,
+      gi0 = 3 * (perm[ii + perm[jj + perm[kk]]] % 12),
+      gi1 = 3 * (perm[ii + i1 + perm[jj + j1 + perm[kk + k1]]] % 12),
+      gi2 = 3 * (perm[ii + i2 + perm[jj + j2 + perm[kk + k2]]] % 12),
+      gi3 = 3 * (perm[ii + 1 + perm[jj + 1 + perm[kk + 1]]] % 12);
+
+    let t0, t1, t2, t3, n0, n1, n2, n3;
+    t0 = 0.6 - x0 * x0 - y0 * y0 - z0 * z0;
+    if (t0 < 0) n0 = 0;
+    else {
+      t0 *= t0;
+      n0 = t0 * t0 * (x0 * grad[gi0] + y0 * grad[gi0 + 1] + z0 * grad[gi0 + 2]);
+    }
+    t1 = 0.6 - x1 * x1 - y1 * y1 - z1 * z1;
+    if (t1 < 0) n1 = 0;
+    else {
+      t1 *= t1;
+      n1 = t1 * t1 * (x1 * grad[gi1] + y1 * grad[gi1 + 1] + z1 * grad[gi1 + 2]);
+    }
+    t2 = 0.6 - x2 * x2 - y2 * y2 - z2 * z2;
+    if (t2 < 0) n2 = 0;
+    else {
+      t2 *= t2;
+      n2 = t2 * t2 * (x2 * grad[gi2] + y2 * grad[gi2 + 1] + z2 * grad[gi2 + 2]);
+    }
+    t3 = 0.6 - x3 * x3 - y3 * y3 - z3 * z3;
+    if (t3 < 0) n3 = 0;
+    else {
+      t3 *= t3;
+      n3 = t3 * t3 * (x3 * grad[gi3] + y3 * grad[gi3 + 1] + z3 * grad[gi3 + 2]);
+    }
+    return 20 * (n0 + n1 + n2 + n3) + 1;
+  };
+
+  //////
+
+  const noises = (x, y, z) =>
+    noise(x, y, z) +
+    noise(x * 2, y * 2, z * 2) +
+    +noise(x * 4, y * 4, z * 4) +
+    +noise(x * 8, y * 8, z * 8) +
+    +noise(x * 16, y * 16, z * 16);
+
+  const createVolume = (size) => {
+    const volume = new Uint8Array(size * size * size);
+    let plateauFalloff, centerFalloff, density;
+    for (let x = 1; x < size - 1; x++) {
+      for (let y = 1; y < size - 1; y++) {
+        for (let z = 1; z < size - 1; z++) {
+          let xf = x / size;
+          let yf = y / size;
+          let zf = z / size;
+          let caves = Math.pow(noise(xf * 5, yf * caveNy, zf * 5), 3);
+          if (caves < 0.5) density = 0;
+          else {
+            if (struct === 1) {
+              if (yf <= 0.8) plateauFalloff = 1;
+              else if (0.8 < yf && yf < 0.9)
+                plateauFalloff =
+                  caveNy === 15 ? 1.5 - (yf - 0.8) * 15 : 1.0 - (yf - 0.8) * 10;
+              else plateauFalloff = 0;
+              centerFalloff =
+                0.1 /
+                (Math.pow((xf - 0.5) * 1.5, 2) +
+                  Math.pow((yf - 1.0) * 0.8, 2) +
+                  Math.pow((zf - 0.5) * 1.5, 2));
+            } else {
+              plateauFalloff = 0.8;
+              centerFalloff =
+                0.1 /
+                (Math.pow((xf - 0.5) * 1.5, 2) +
+                  Math.pow((yf - 0.5) * 1.5, 2) +
+                  Math.pow((zf - 0.5) * 1.5, 2));
+            }
+
+            density =
+              noises(xf, yf * 0.5, zf) *
+              centerFalloff *
+              plateauFalloff *
+              Math.pow(noise((xf + 1) * 3, (yf + 1) * 3, (zf + 1) * 3), 2.5);
+          }
+          if (density > 2.5) {
+            let c = 1;
+            if (lava) {
+              const xl = (2 * (x - size * 0.5)) / size;
+              const yl = (2 * (y - size * 0.5)) / size;
+              const zl = (2 * (z - size * 0.5)) / size;
+              const d = Math.sqrt(xl * xl + yl * yl + zl * zl);
+              const s = noise(xl * 5 + 4, yl * 5 + 4, zl * 5 + 4);
+              if (s > 1.1 && d < 0.55) {
+                pushBlock(x, y, z, true);
+                c = 2;
+              }
+            }
+
+            volume[x + y * size + z * size * size] = c;
+            if (c === 1) {
+              pushBlock(x, y, z);
+            }
+          }
+          if (frag === true && random() > 0.99995) {
+            pushBlock(x, y, z);
+            volume[x + y * size + z * size * size] = 1;
+          }
+        }
+      }
+    }
+    return volume;
+  };
+
+  const pushBlock = (x, y, z, full) =>
+    figures.push({
+      geometry: {
+        type: "BoxGeometry", // Type of geometry
+        args: [
+          // Arguments relevant to the geometry (check THREE API)
+          1 * u, // Cube width
+          1 * u, // Cube height
+          1 * u, // Cube depth
+        ],
+      },
+      pos: {
+        // Position
+        x: x * u,
+        y: y * u,
+        z: z * u,
+      },
+      rot: {
+        // Rotation
+        x: 0,
+        y: 0,
+        z: 0,
+      },
+      lines: !full, // Display color segments (like wireframe, but faces not triangles)
+      hatch: !full, // Fill with white texture
+      full: full, // Fill with color texture (in the anaverse, red and cyan)
+    });
+
+  const volume = createVolume(rez);
+
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < 4; j++) {
+      // add a landing pad
+      figures.push({
+        geometry: {
+          type: "BoxGeometry", // Type of geometry
+          args: [
+            // Arguments relevant to the geometry (check THREE API)
+            1 * u, // Cube width
+            1 * u, // Cube height
+            1 * u, // Cube depth
+          ],
+        },
+        pos: {
+          // Position
+          x: i * u,
+          y: -1.5 * u,
+          z: j * u,
+        },
+        rot: {
+          // Rotation
+          x: 0,
+          y: 0,
+          z: 0,
+        },
+        lines: true, // Display color segments (like wireframe, but faces not triangles)
+        hatch: true, // Fill with white texture
+        full: false, // Fill with color texture (in the anaverse, red and cyan)
+      });
+    }
+  }
+
+  console.log(features);
+  console.log("lava is ", features.lava);
+
+  return { figures, features, volume, noise };
+};
+
+export { genererFigures };
