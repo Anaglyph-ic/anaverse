@@ -401,6 +401,7 @@ a {
     flex-wrap: wrap;
     width: 100%;
     min-height: 220px;
+    padding-bottom: 10px;
 }
 
 .artistList {
@@ -726,10 +727,13 @@ a {
   height:40%;
   padding:5%;
 }
-#highlightDesc{
-  width:40%;
-  height:40%;
-  padding:5%;
+.helperPanel{
+  font-family: sans-serif;
+  background-color: white;
+  padding: 2%;
+    margin: 2%;
+    line-height: 120%;
+    border: 1px dashed red;
 }
 
 #walletDetail{
