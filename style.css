@@ -170,12 +170,13 @@ a {
 }
 
 #helper {
-  left: calc(100% - 350px);
-  width: 300px;
+  left: calc(100% - 250px);
+  /* width: 300px; */
   top: 40%;
   background-color: white;
-  padding: 5px;
-  border: 2px solid black;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
   z-index: 888;
   position: absolute;
   display: block;
