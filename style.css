@@ -946,7 +946,7 @@ https://github.com/mese79/TouchControls/blob/master/css/touch-pad.css
   font-family: sans-serif;
   padding: 2px;
   text-align: left;
-  display: flex;
+  display: none;
   flex-direction: row;
   /* justify-content: center; */
   align-items: center;
