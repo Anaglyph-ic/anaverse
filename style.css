@@ -1009,3 +1009,10 @@ input[type="range"]::-ms-thumb {
   left: calc(50% - 5px);
   display: none;
 }
+
+.gameButton{
+  border: 1px solid cyan;
+  padding: 20px;
+  margin: 20px;
+  background-color: white;
+}
