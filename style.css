@@ -1010,9 +1010,26 @@ input[type="range"]::-ms-thumb {
   display: none;
 }
 
+
+
 .gameButton{
   border: 1px solid cyan;
   padding: 20px;
   margin: 20px;
   background-color: white;
+  cursor: pointer;
 }
+
+#targetInfo{
+    position: absolute;
+    display: none;
+    margin-left: 80%;
+    background-color: white;
+    margin-top: 10px;
+    Z-INDEX: 888;
+    border: 1px solid red;
+    padding: 5px;
+    width: 15%;
+    user-select: none;
+    font-family: sans-serif;
+  }
