@@ -368,8 +368,7 @@ a {
   display:inline-flex;
   position: absolute;
   top: 0px;
-  padding:5px;
-  height:10%;
+  padding:15px;
   left: 80%;
   cursor: pointer;
   z-index: 99;
@@ -1025,8 +1024,8 @@ input[type="range"]::-ms-thumb {
     display: none;
     margin-left: 80%;
     background-color: white;
-    margin-top: 10px;
-    Z-INDEX: 888;
+    margin-top: 80px;
+    Z-INDEX: 45;
     border: 1px solid red;
     padding: 5px;
     width: 15%;
