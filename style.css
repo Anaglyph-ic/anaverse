@@ -1032,3 +1032,44 @@ input[type="range"]::-ms-thumb {
     user-select: none;
     font-family: sans-serif;
   }
+
+  .serviceList{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+   
+  }
+  .serviceContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height:120px;
+    margin-top:20px;
+  }
+
+.serviceLoaderButton {
+    margin-left: 20px;
+    background: white;
+    border: 1px solid rgb(200,200,200);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    height: 70px;
+    padding-top: 50px;
+    width: 160px;
+  color: black;
+}
+
+.serviceLoaderButton:hover{
+  background: #141414;
+  color: white;
+}
+
+.serviceDesc{
+  padding: 10px;
+  background: white;
+  border: 1px solid rgb(200,200,200);
+  height: 100px;
+  width: 70%;
+}
