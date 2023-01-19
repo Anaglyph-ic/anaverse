@@ -1072,4 +1072,12 @@ input[type="range"]::-ms-thumb {
   border: 1px solid rgb(200,200,200);
   height: 100px;
   width: 70%;
+  overflow-y: auto;
+}
+
+#optionDiv{
+  margin: 10px;
+    background: white;
+    border: 1px solid gray;
+    padding: 10px;
 }
