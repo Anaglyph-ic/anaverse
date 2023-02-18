@@ -950,6 +950,7 @@ https://github.com/mese79/TouchControls/blob/master/css/touch-pad.css
   /* justify-content: center; */
   align-items: center;
   font-size: 10px;
+  display: none;
 }
 
 #info{
@@ -1081,3 +1082,42 @@ input[type="range"]::-ms-thumb {
     border: 1px solid gray;
     padding: 10px;
 }
+
+.detailedMetadata{
+  background: rgba(0,0,0,0.5);
+  padding: 10px;
+}
+
+#artwork-detailedMetaData{
+  z-index: 55;
+  position: absolute;
+  color: white;
+  top: 10%;
+  padding: 5px;
+  font-family: sans-serif;
+  display: none;
+  width: 30%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#artwork-title{
+  font-size: 20px;
+  font-weight: 900;
+}
+
+
+
+#artwork-description{
+  max-width: 250px;
+  font-size: 12px;
+  overflow-y: scroll;
+  max-height: 220px;
+}
+
+#artwork-mime-type{
+  font-size: 10px;
+  font-style: italic;
+
+}
+
