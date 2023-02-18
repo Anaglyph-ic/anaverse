@@ -1106,13 +1106,11 @@ input[type="range"]::-ms-thumb {
   font-weight: 900;
 }
 
-
-
 #artwork-description{
   max-width: 250px;
   font-size: 12px;
   overflow-y: scroll;
-  max-height: 220px;
+  max-height: 190px;
 }
 
 #artwork-mime-type{
