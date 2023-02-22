@@ -521,9 +521,10 @@ a {
 
 #connectInfo {
   position: absolute;
-  width: 30%;
+  width: 350px;
+  margin-left: calc(100% - 380px);
   text-align: right;
-  margin-left:65%;
+  
   margin-right: 5%;
   top: 75%;
   font-family: monospace;
