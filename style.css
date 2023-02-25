@@ -688,6 +688,7 @@ a {
   z-index: 49;
   max-width: 500px;
   max-height: 500px;
+  display: none;
 }
 
 
