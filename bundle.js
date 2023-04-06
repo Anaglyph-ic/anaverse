@@ -267,7 +267,7 @@ query getArtistCreations {
         }
       }
     }
-  `},PD=()=>{const e={room:[],fp:[],sky:[]};for(const t in MD)MD[t].tag.hasOwnProperty("room")&&e.room.push(MD[t]);const n=(new Date).getHours();if(n>=6&&n<=20)for(const e in MD)9574===MD[e].id&&lS(MD[e],0,TD(),"",!0,!1);else for(const e in MD)21525===MD[e].id&&lS(MD[e],0,TD(),"",!0,!1);if(e.room.length>0){const n=e.room[Math.floor(Math.random()*e.room.length)];t["Choix aléatoire"].fin=performance.now(),lS(n,0,TD(),"")}},jD=e=>{e.DOMelements.gallery.length>0?lD(e):(e=>{aB(e),(0,mb.request)("https://data.objkt.com/v3/graphql",mb.gql`query getAllIterations {
+  `},PD=()=>{const e={room:[],fp:[],sky:[]};for(const t in MD)MD[t].tag.hasOwnProperty("room")&&e.room.push(MD[t]);const n=(new Date).getHours();if(n>=6&&n<=20)for(const e in MD)9574===MD[e].id&&lS(MD[e],0,TD(),"",!0,!1);else for(const e in MD)21525===MD[e].id&&lS(MD[e],0,TD(),"",!0,!1);e.room.length>0&&(t["Choix aléatoire"].fin=performance.now(),e.room.forEach((e=>{8376===e.id&&lS(e,0,TD(),"RANDOM CHAPEL")})))},jD=e=>{e.DOMelements.gallery.length>0?lD(e):(e=>{aB(e),(0,mb.request)("https://data.objkt.com/v3/graphql",mb.gql`query getAllIterations {
     gallery(where: {gallery_id: {_eq: "${e.id}"}}) {
       tokens(order_by: {id: desc}) {
         fa_contract
