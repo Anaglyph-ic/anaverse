@@ -419,7 +419,7 @@ a {
   margin-bottom: -200px;
   margin-top: -25px;
   padding:1%;
-  background-image: url( "/loading.gif");
+  /* background-image: url( "/loading.gif"); */
   background-size: 200px;
 }
 #filter {
