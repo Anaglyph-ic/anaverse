@@ -419,7 +419,6 @@ a {
   margin-bottom: -200px;
   margin-top: -25px;
   padding:1%;
-  /* background-image: url( "/loading.gif"); */
   background-size: 200px;
 }
 #filter {
@@ -439,26 +438,27 @@ a {
   cursor: pointer;
   display: inline-block;
 }
+
 .tokensDiv {
   display: flex;
-    align-items: center;
-    overflow-x: auto;
-    overflow-y: hidden;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    min-height: 220px;
-    padding-bottom: 10px;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 220px;
+  padding-bottom: 10px;
 }
 
 .artistList {
   display: inline-flex;
-    align-items: center;
-    overflow-x: auto;
-    overflow-y: hidden;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 #hider {
