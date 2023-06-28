@@ -346,7 +346,6 @@ a {
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
   margin: auto;
-  height: 15px;
   padding: 5px;
   border: 1px solid rgb(200 200 200);
   border-radius: 3px;
@@ -515,7 +514,7 @@ a {
   text-align: right;
   display: block;
   font-size: 10px;
-  cursor: pointer;
+  cursor: not-allowed;
 }
 
 #connectInfo {
