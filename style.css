@@ -193,7 +193,7 @@ a {
 #worldItemTooltip {
   left: calc(100% - 350px);
   width: 300px;
-  top: calc(100% - 270px);
+  top: calc(100% - 300px);
   background-color: white;
   padding: 5px;
   border: 1px solid black;
@@ -290,6 +290,26 @@ a {
   overflow-x: hidden;
   overflow-y: auto;
 }
+.focusToolButton{
+  display: flex;align-items: center;padding: 3px;  cursor: pointer;
+  font-size: 13px;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 15px;justify-content: space-between;
+  margin-top:8px;
+  margin-bottom:8px;
+  height: 20px;
+  font-weight: normal;
+}
+
+
+.focusTextNote{font-size: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-family: sans-serif;
+  border: transparent;
+  height: 130px;
+  width: 291px;}
 
 #fpTokensDiv {
   overflow-x: hidden;
@@ -763,6 +783,15 @@ a {
   border: 1px solid black;
   padding: 0px;
   margin:5px;
+}
+
+#personalNotes{
+  position: absolute;
+  width: 30%;
+  background-color: rgba(0,0,0,0.5);
+  left:70%;
+  top:10%;
+  display: none;
 }
 
 #itemMetaData {
