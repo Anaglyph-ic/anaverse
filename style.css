@@ -791,7 +791,7 @@ a {
   background-color: rgba(0,0,0,0.5);
   left:70%;
   top:10%;
-  display: none;
+  
 }
 
 #itemMetaData {
@@ -804,6 +804,20 @@ a {
   border: 1px solid black;
   font-family: Georgia, "Times New Roman", Times, serif;
   max-width: 35%;
+  font-size: smaller;
+  pointer-events: none;
+}
+
+#itemMetaNote {
+  display: none;
+  top: 55%;
+  left: 73%;
+  position: absolute;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid black;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  max-width: 25%;
   font-size: smaller;
   pointer-events: none;
 }
