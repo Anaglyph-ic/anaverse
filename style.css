@@ -794,6 +794,22 @@ a {
   
 }
 
+#subtitles{
+  position: absolute;
+  display: none;
+  padding:3%;
+  font-size: larger;
+  font-weight: 500;
+  color: white;
+  background: rgba(0,0,0,0.7);
+  z-index: 120;
+  top: 80%;
+    left: 15%;
+    width: 66%;
+    font-family: sans-serif;
+    border-radius: 5px;
+}
+
 #itemMetaData {
   display: none;
   top: 50%;
