@@ -797,17 +797,16 @@ a {
 #subtitles{
   position: absolute;
   display: none;
-  padding:3%;
-  font-size: larger;
+  padding:10px;
+  font-size: 25px;
   font-weight: 500;
   color: white;
   background: rgba(0,0,0,0.7);
   z-index: 120;
-  top: 80%;
-    left: 15%;
-    width: 66%;
-    font-family: sans-serif;
-    border-radius: 5px;
+  text-align: center;
+  top: calc(90% - 100px);
+  font-family: sans-serif;
+    
 }
 
 #itemMetaData {
@@ -1062,6 +1061,13 @@ input[type="range"]::-webkit-slider-thumb {
   background: white;
   cursor: ew-resize;
   border : 1px solid black;
+}
+
+#IIIFresizeContainer{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 10px;
 }
 
 input[type="range"]::-moz-range-thumb {
