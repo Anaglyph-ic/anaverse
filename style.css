@@ -646,6 +646,14 @@ a {
   list-style: none;
 }
 
+.button-desc{
+  background: rgba(255,255,255,0.9);
+  padding: 2px;
+  border-radius: 3px;
+  text-align: center;
+  width: 190px;
+}
+
 #mobile-walk-desc{
 position: absolute;
 top:calc(75% - 50px);
@@ -659,12 +667,14 @@ left: calc(25% - 50px);
   }
 
 
+
+
 #fullscreen-button-desc{
   position: absolute;
   top: 70px;
   left: calc(100% - 250px);
   width: 190px;
-  text-align: end;
+  
 }
 
 #fullscreen-button{
@@ -694,7 +704,6 @@ left: calc(25% - 50px);
   top: 20px;
   left: calc(100% - 250px);
   width: 190px;
-  text-align: end;
 }
 
 #help-trigger-button{
@@ -724,7 +733,7 @@ left: calc(25% - 50px);
   top: calc(30% + 10px);
   left: calc(100% - 250px);
   width: 190px;
-  text-align: end;
+  
 }
 
 #loader-button {
@@ -754,7 +763,7 @@ left: calc(25% - 50px);
   top: calc(30% + 70px);
   left: calc(100% - 250px);
   width: 190px;
-  text-align: end;
+ 
 }
 
 #gallery-button {
@@ -844,12 +853,11 @@ left: calc(25% - 50px);
   justify-content: center;
 }
 
-
 #mobile-help-panel{
   position: absolute;
   top:0px;
   left:0px;
-  background-color: rgba(255, 255, 255, 0.8);
+  
   display: none;
   font-size: 20px;
   font-family: sans-serif;
@@ -857,15 +865,14 @@ left: calc(25% - 50px);
   width: 100%;
   height: 100%;
   z-index: 57;
+  user-select: none;
+  pointer-events: none;
 }
 
 #mobile-control {
   overflow: hidden;
   display: none;
 }
-
-
-
 
 #pastillesDiv{
   position: absolute;
