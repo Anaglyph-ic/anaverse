@@ -861,6 +861,7 @@ left: calc(25% - 50px);
 
 #mobile-control {
   overflow: hidden;
+  display: none;
 }
 
 
