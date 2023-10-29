@@ -174,12 +174,14 @@ a {
 }
 
 #helper {
-  left: calc(100% - 250px);
-  width: 260px;
+  left: calc(100% - 270px);
+  width: 250px;
   top: 40%;
   background-color: white;
   padding: 10px;
-  border: 1px solid black;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   z-index: 888;
   position: absolute;
   display: block;
@@ -319,7 +321,7 @@ a {
 #title {
   padding-top: 1%;
   padding-left: 250px;
-  font-size: 40px;
+  font-size: 1.75em;
   font-style: italic;
   font-weight: 100;
   overflow-y: hidden;
@@ -489,7 +491,7 @@ a {
   left: 0px;
   top: 0px;
   opacity: 1;
-  z-index: 50;
+  z-index: 80;
 }
 
 #landingTitle {
@@ -644,124 +646,224 @@ a {
   list-style: none;
 }
 
-#mobile-control {
-  display: none;
+#mobile-walk-desc{
+position: absolute;
+top:calc(75% - 50px);
+left: calc(25% - 50px);
+}
+
+#mobile-look-desc{
+  position: absolute;
+  top:calc(75% - 50px);
+  left: calc(75% - 50px);
+  }
+
+
+#fullscreen-button-desc{
+  position: absolute;
+  top: 70px;
+  left: calc(100% - 250px);
+  width: 190px;
+  text-align: end;
+}
+
+#fullscreen-button{
+  position: absolute;
+  top: 60px;
+  left: calc(100% - 50px);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  background: radial-gradient( rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 100% );
+  text-align: center;
+  border-radius: 50%;
+  background-size: cover;
+  border: 1px solid black;
+  cursor: pointer;
+  z-index: 61;
+  max-width: 500px;
+  max-height: 500px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#help-trigger-button-desc{
+  position: absolute;
+  top: 20px;
+  left: calc(100% - 250px);
+  width: 190px;
+  text-align: end;
+}
+
+#help-trigger-button{
+  position: absolute;
+  top: 10px;
+  left: calc(100% - 50px);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  background: radial-gradient( rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 100% );
+  text-align: center;
+  border-radius: 50%;
+  background-size: cover;
+  border: 1px solid black;
+  cursor: pointer;
+  z-index: 61;
+  max-width: 500px;
+  max-height: 500px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#loader-button-desc {
+  position: absolute;
+  top: calc(30% + 10px);
+  left: calc(100% - 250px);
+  width: 190px;
+  text-align: end;
 }
 
 #loader-button {
   position: absolute;
   top: 30%;
-  left: 90%;
+  left: calc(100% - 50px);
   font-family: Arial, Helvetica, sans-serif;
   font-size: large;
-  background: radial-gradient(
-    rgba(215, 225, 255, 0.7) 0%,
-    rgba(215, 225, 255, 0.5) 100%
-  );
+  background: radial-gradient( rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 100% );
   text-align: center;
   border-radius: 50%;
   background-size: cover;
-  border: 1px solid white;
+  border: 1px solid black;
   cursor: pointer;
-  z-index: 49;
+  z-index: 61;
   max-width: 500px;
   max-height: 500px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#gallery-button-desc {
+  position: absolute;
+  top: calc(30% + 70px);
+  left: calc(100% - 250px);
+  width: 190px;
+  text-align: end;
 }
 
 #gallery-button {
   position: absolute;
-  top: 40%;
-  left: 90%;
+  top: calc(30% + 60px);
+  left: calc(100% - 50px);
   font-family: Arial, Helvetica, sans-serif;
   font-size: large;
-  background: radial-gradient(
-    rgba(215, 225, 255, 0.7) 0%,
-    rgba(215, 225, 255, 0.5) 100%
-  );
+  background: radial-gradient( rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 100% );
   text-align: center;
   border-radius: 50%;
   background-size: cover;
-  border: 1px solid white;
+  border: 1px solid black;
   cursor: pointer;
-  z-index: 49;
+  z-index: 61;
   max-width: 500px;
   max-height: 500px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#mobile-jetpack-desc {
+  position: absolute;
+  top: calc(50% + 10px);
+  left: 70px;
+}
+
+#mobile-jetpack {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  background: radial-gradient( rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 100% );
+  text-align: center;
+  border-radius: 50%;
+  background-size: cover;
+  border: 1px solid black;
+  cursor: pointer;
+  z-index: 61;
+  max-width: 500px;
+  max-height: 500px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#mobile-reset-desc{
+  position: absolute;
+  top: 10px;
+  left: 150px;
+}
+
+
+#hang-button-desc {
+  position: absolute;
+  top: calc(50% - 40px);
+  left: 70px;
+  display: none;
 }
 
 #hang-button {
   position: absolute;
-  top: 40%;
-  left: 1%;
+  top: calc(50% - 50px);
+  left: 10px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: large;
-  background: radial-gradient(
-    rgba(215, 225, 255, 0.7) 0%,
-    rgba(215, 225, 255, 0.5) 100%
-  );
+  background: radial-gradient( rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 100% );
   text-align: center;
   border-radius: 50%;
   background-size: cover;
-  border: 1px solid white;
+  border: 1px solid black;
   cursor: pointer;
-  z-index: 49;
+  z-index: 61;
   max-width: 500px;
   max-height: 500px;
+  width: 40px;
+  height: 40px;
   display: none;
+  align-items: center;
+  justify-content: center;
 }
 
 
-#mobile-rotation {
+#mobile-help-panel{
   position: absolute;
-  left: 60%;
-  background: radial-gradient(
-    rgba(215, 225, 255, 0.7) 0%,
-    rgba(215, 225, 255, 0.5) 100%
-  );
-  border-radius: 50%;
-  background-size: cover;
-  border: 1px solid white;
-  cursor: pointer;
-  z-index: 49;
-  max-width: 400px;
-  max-height: 400px;
-  pointer-events: none;
+  top:0px;
+  left:0px;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: none;
+  font-size: 20px;
+  font-family: sans-serif;
+  color: #141414;
+  width: 100%;
+  height: 100%;
+  z-index: 57;
 }
 
-#mobile-position {
-  position: absolute;
-  left: 0px;
-  background: radial-gradient(
-    rgba(215, 225, 255, 0.7) 0%,
-    rgba(215, 225, 255, 0.5) 100%
-  );
-  border-radius: 50%;
-  background-size: cover;
-  border: 1px solid white;
-  cursor: pointer;
-  z-index: 49;
-  max-width: 400px;
-  max-height: 400px;
-  pointer-events: none;
-}
-#mobile-controls {
+#mobile-control {
   overflow: hidden;
 }
 
-#mobile-jetpack {
-  background: radial-gradient(
-    rgba(215, 225, 255, 0.7) 0%,
-    rgba(215, 225, 255, 0.5) 100%
-  );
-  position: absolute;
-  top: 60%;
-  left: 1%;
-  width: 5%;
-  height: 10%;
-  border: 1px solid white;
-  cursor: pointer;
-  z-index: 49;
-  background-size: cover;
-}
+
 
 
 #pastillesDiv{
@@ -1192,6 +1294,7 @@ input[type="range"]::-ms-thumb {
   width: 30%;
   flex-direction: column;
   align-items: flex-start;
+  max-height: 80%;
 }
 
 #artwork-title{
