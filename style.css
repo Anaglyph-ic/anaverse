@@ -29,6 +29,8 @@ a {
 #header {
   border-bottom: 1px solid gray;
   background-color: white;
+  position: relative;
+  
 }
 
 #anavTooltip {
@@ -54,6 +56,7 @@ a {
   overflow-x: hidden;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .iterDiv {
@@ -177,11 +180,12 @@ a {
   left: calc(100% - 270px);
   width: 250px;
   top: 40%;
-  background-color: white;
+  background-color: rgba(255, 255, 255,0.95);
+  border-radius: 5px;
   padding: 10px;
-  border-left: 1px solid black;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-left:1px dashed red;
+  border-top: 1px dashed red;
+  border-bottom: 1px dashed red;
   z-index: 888;
   position: absolute;
   display: block;
@@ -585,6 +589,64 @@ a {
   mix-blend-mode: multiply;
 }
 
+#galleryMainWindow{
+  position: relative;
+}
+
+@keyframes loaderHeaderSlideDown {
+  0% {
+    top: -200px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+@keyframes tokensSlideDown {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes loaderHeaderSlideUp {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: -200px;
+  }
+}
+
+@keyframes loaderNudgeSlideTop {
+  0% {
+    top: 20%;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+@keyframes loaderSlideTop {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+@keyframes loaderSlideRight {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
 @keyframes slideRight {
   0% {
     left: calc(100% - 250px);
@@ -757,6 +819,14 @@ left: calc(25% - 50px);
   align-items: center;
   justify-content: center;
 }
+#galleryLeftMenu{
+  overflow-y: scroll;
+  border-right: 1px solid black;
+  position: relative;
+  border-top: 1px solid black;
+  top: -1px;
+}
+
 
 #gallery-button-desc {
   position: absolute;
@@ -1293,9 +1363,10 @@ input[type="range"]::-ms-thumb {
 
 #artwork-detailedMetaData{
   z-index: 55;
-  position: absolute;
+  position: relative;
   color: white;
-  top: 10%;
+  top: 75px;
+  left:0px;
   padding: 5px;
   font-family: sans-serif;
   display: none;
