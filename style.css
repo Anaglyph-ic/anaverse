@@ -1048,7 +1048,8 @@ left: calc(25% - 50px);
   text-align: center;
   top: calc(90% - 100px);
   font-family: sans-serif;
-    
+  pointer-events: none;
+  user-select: none;
 }
 
 #itemMetaData {
