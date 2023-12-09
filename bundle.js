@@ -585,6 +585,7 @@ query getArtistCreations {
             tag: { name: { _eq: "anaverse" } }
             token: { tags: { tag: { name: { _eq: "crosschain" } } } }
           }
+          supply: { _gt: "0" }
         }
       ) {
         attributes {
