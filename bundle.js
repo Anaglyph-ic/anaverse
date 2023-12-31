@@ -994,7 +994,7 @@ query getArtistCreations {
             baseUri
             description
             address
-            seriesTokens {
+            seriesTokens(first: 500) {
               edges {
                 id
                 tokenId
