@@ -1462,3 +1462,13 @@ input[type="range"]::-ms-thumb {
   font-style: italic;
 
 }
+
+.gloaderTextInput{
+    width:150px;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    border-radius: 50rem;
+    padding: 0 1rem;
+    text-align: center;
+    border:1px solid gray;
+}
