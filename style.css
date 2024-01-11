@@ -1472,3 +1472,22 @@ input[type="range"]::-ms-thumb {
     text-align: center;
     border:1px solid gray;
 }
+
+.thumbToolAction{
+  border: 1px solid red;
+    border-radius: 3px;
+    margin: 3px;
+    background: transparent;
+    cursor: pointer;
+    color:black;
+}
+
+.thumbToolAction:hover{
+  border: 1px solid red;
+    border-radius: 3px;
+    margin: 3px;
+    background: red;
+    cursor: pointer;
+    color:white;
+}
+
