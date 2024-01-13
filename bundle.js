@@ -781,7 +781,7 @@
               address
             }
           }
-        `,{collectionId:e.id}).then((e=>r.contract=e.getPublicCollection.address)).then((()=>{let t=!1;e.seriesTokens.edges[0].attributes.forEach((n=>{n.value===r.artifact_uri&&(t=e)})),t&&(t.seriesTokens.edges.forEach((e=>{((e,t)=>{t.imgUrl=t.imageUrl,t.chain="ethereum",t.gentk=e,t.token_id=t.tokenId,t.contract=e.contract;const n=new URL(t.animationUrl),i=n.searchParams.get("ms");let r=n.searchParams.get("h");const s=t.tokenId;i>1&&(r+=s),t.hash=r;const a=oC(t,"loadIteration");e.DOMelements.gallery.push(a)})(r,e)})),qC(r))}))}))}))}break;case"specificToken":switch(e.blockchain){case"tezos":xI(e.gallery,e.contract,e.token_id);break;case"ethereum":t=e.gallery,n=e.contract,i=e.token_id,Wy()("https://api.highlight.xyz:8080/",qy.gql`
+        `,{collectionId:e.id}).then((e=>r.contract=e.getPublicCollection.address)).then((()=>{let t=!1;e.seriesTokens.edges[0].attributes.forEach((n=>{n.value===r.artifact_uri&&(t=e)})),t&&(t.seriesTokens.edges.forEach((e=>{((e,t)=>{t.imgUrl=t.imageUrl,t.chain="ethereum",t.gentk=e,t.token_id=t.tokenId,t.contract=e.contract;const n=new URL(t.animationUrl),i=n.searchParams.get("ms");let r=n.searchParams.get("h");const s=t.tokenId;i>1&&(r+=s),t.hash=r;const a=oC(t,"loadIteration");e.iterationsLoaded=1,e.DOMelements.gallery.push(a)})(r,e)})),qC(r))}))}))}))}break;case"specificToken":switch(e.blockchain){case"tezos":xI(e.gallery,e.contract,e.token_id);break;case"ethereum":t=e.gallery,n=e.contract,i=e.token_id,Wy()("https://api.highlight.xyz:8080/",qy.gql`
       query GetCollectionByOnChainId($onChainId: String!) {
         getCollectionByOnChainId(onChainId: $onChainId) {
           id
