@@ -1562,3 +1562,12 @@ input[type="range"]::-ms-thumb {
   color: white;
   background-color: red;
 }
+
+.iterationBox{
+  width: 90%;
+  margin-top:15px;
+  font-size: 10px;
+  border:1px solid red;
+  border-radius:5px;
+  padding:5px;
+}
