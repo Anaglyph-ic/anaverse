@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<body style="display: flex;flex-direction: column;align-items: center;">
+    <form>
+        <input type="text" id="contract" placeholder="contract">
+        <input type="text" id="tokenid" placeholder="token_id">
+        <button type="text" id="load" value="load">load</button>
+    </form>
+    <hr>
+    <iframe id="anavframe" style="border:0px;width:800px;height:600px"></iframe>
+
+
+    <script>
+
+        console.log(window.location.origin)
+
+        const tokenid = document.getElementById("tokenid")
+
+        const contract = document.getElementById("contract")
+        document.getElementById("load").addEventListener("click", (e) => {
+            e.preventDefault()
+            document.getElementById("anavframe").src = `
+    ${window.location.origin}/?gallery=1&loadsingle=1&singlecontract=${contract.value}&singletokenid=${tokenid.value}
+    `
+        })
+
+
+    </script>
+</body>
+
+</html>
