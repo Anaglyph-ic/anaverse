@@ -9,6 +9,9 @@
     </form>
     <hr>
     <iframe id="anavframe" style="border:0px;width:800px;height:600px"></iframe>
+    <hr>
+    <div id="address" style="padding:5px;border:1px solid black; font-family:
+        monospace;"></div>
 
 
     <script>
@@ -20,9 +23,16 @@
         const contract = document.getElementById("contract")
         document.getElementById("load").addEventListener("click", (e) => {
             e.preventDefault()
-            document.getElementById("anavframe").src = `
-    ${window.location.origin}/?gallery=1&loadsingle=1&singlecontract=${contract.value}&singletokenid=${tokenid.value}
-    `
+            const target = `${window.location.origin}/?gallery=1&loadsingle=1&singlecontract=${contract.value}&singletokenid=${tokenid.value}`
+            document.getElementById("address").innerText = `<iframe
+
+             src="${target}"
+
+             style="border:0px;width:800px;height:600px"
+
+             /> `;
+            document.getElementById("anavframe").src = target;
+
         })
 
 
