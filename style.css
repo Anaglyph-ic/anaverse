@@ -1571,3 +1571,13 @@ input[type="range"]::-ms-thumb {
   border-radius:5px;
   padding:5px;
 }
+
+#saveScreenshotDiv{
+  position: absolute;
+  top: 83%;
+  left: 30%;
+  color: white;
+  padding: 10px;
+  background: black;  
+  border-radius: 5px;
+}
