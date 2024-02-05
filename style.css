@@ -1580,4 +1580,5 @@ input[type="range"]::-ms-thumb {
   padding: 10px;
   background: black;  
   border-radius: 5px;
+  font-family: sans-serif;
 }
