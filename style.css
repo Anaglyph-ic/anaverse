@@ -232,7 +232,7 @@ a {
 }
 
 #worldItemTooltip {
-  left: calc(100% - 350px);
+  /* left: calc(100% - 350px); */
   width: 300px;
   top: calc(100% - 300px);
   background-color: white;
@@ -1527,6 +1527,27 @@ input[type="range"]::-ms-thumb {
     left: calc(50% - 300px);
   }
 }
+
+
+@keyframes worldToolTipSlideIn {
+  0% {
+    left: 102%;
+  }
+  100% {
+    left: calc(100% - 350px);
+  }
+}
+
+@keyframes worldToolTipSlideOut {
+  0% {
+    left: calc(100% - 350px);
+    
+  }
+  100% {
+    left: 102%;
+  }
+}
+
 
 #iterationClose{
   border-radius: 5px;
