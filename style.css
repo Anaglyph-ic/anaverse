@@ -1620,10 +1620,11 @@ input[type="range"]::-ms-thumb {
     font-family: sans-serif;
     pointer-events: none;
     user-select: none;
+    justify-content: space-between;
 }
 
 .helperColumn{
-  width:30%;
+  
   padding:10px;
 }
 
@@ -1642,7 +1643,8 @@ input[type="range"]::-ms-thumb {
   padding-bottom: 3px;
   padding-left:8px;
   padding-right:8px;
-  opacity:1
+  margin-right:10px;
+  
 }
 
 @keyframes keyhelpappear {
