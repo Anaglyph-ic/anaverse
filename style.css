@@ -474,6 +474,7 @@ a {
     display: inline-flex;
     border-radius: 0px 3px 3px 0px;
     color:black;
+    pointer-events: none;
 }
 
 .gentkCell {
