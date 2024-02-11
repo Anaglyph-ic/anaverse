@@ -1695,6 +1695,7 @@ input[type="range"]::-ms-thumb {
   font-weight: 500;
   padding:5px;
   border-radius: 2px;
+  width: 280px;
 }
 
 #messageC{
@@ -1706,7 +1707,7 @@ input[type="range"]::-ms-thumb {
   left:8px;
   font-weight: 500;
   padding:5px;
-  width: 302px;
+  width: 280px;
 }
 
 #sendMessage{
