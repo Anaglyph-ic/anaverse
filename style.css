@@ -1615,8 +1615,8 @@ input[type="range"]::-ms-thumb {
     left: 20%;
     top: 20%;
     border-radius: 10px;
-    border: 2px solid white;
-    box-shadow: 0px 0px 10px white;
+    border: 1px solid red;
+    
     display: flex;
     font-family: sans-serif;
     pointer-events: none;
@@ -1667,3 +1667,66 @@ input[type="range"]::-ms-thumb {
     opacity: 0;
   }
 }
+
+#messageDiv{
+  position: absolute;
+  top:30%;
+  width:300px;
+  height:300px;
+  background-color: transparent;
+  z-index: 45;
+  left:5px;
+  overflow-y: hidden;
+  overflow-y:scroll ;
+  scrollbar-width: none;
+  display: none;
+  word-break: break-word;
+  outline: 0px;
+  border:0px;
+}
+
+#messageR{
+  mix-blend-mode: multiply;
+  color: rgb(255, 0, 0);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  position: absolute;
+  left:5px;
+  font-weight: 500;
+  padding:5px;
+  border-radius: 2px;
+}
+
+#messageC{
+  mix-blend-mode: multiply;
+  color: rgb(0, 255, 235);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  position: absolute;
+  left:8px;
+  font-weight: 500;
+  padding:5px;
+  width: 302px;
+}
+
+#sendMessage{
+  position: absolute;
+  top : calc(30% + 305px);
+  z-index: 45;
+  left:5px;
+  border-left:2px solid red;
+  border-top:0px;
+  border-bottom:0px;
+  border-right:0px;
+  width:300px;
+  background-color: transparent;
+  display: none;
+  outline: 0px;
+}
+
+#sendMessage:focus{
+  border-bottom:1px solid red;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 3px;
+}
+
