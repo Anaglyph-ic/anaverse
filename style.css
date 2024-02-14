@@ -1731,3 +1731,10 @@ input[type="range"]::-ms-thumb {
   border-radius: 3px;
 }
 
+#transactionThumbnail{
+border-radius: 5px;
+border: 1px solid black;
+position: absolute;
+left: calc(90% - 200px);
+top: 20px;
+}
