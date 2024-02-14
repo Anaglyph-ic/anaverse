@@ -1,1 +1,97 @@
-const genererSprite=(e,t,r)=>{let n=t.slice(2),a=new RegExp(".{"+(t.length/4|0)+"}","g");var l=((e,t,r,n)=>()=>{var a=((e|=0)+(t|=0)|0)+(n|=0)|0;return n=n+1|0,e=t^t>>>9,t=(r|=0)+(r<<3)|0,r=(r=r<<21|r>>>11)+a|0,(a>>>0)/4294967296})(...n.match(a).map((e=>{return t=e,[...t].reduce(((e,t)=>58*e+"123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ".indexOf(t)|0),0);var t})));const c=document.createElement("canvas").getContext("2d"),o=l;c.fillStyle="black";const i=6+(12,Math.floor(12*o()));const s=e/i;for(let t=0;t<i;++t)for(let r=0;r<i/2-1;++r)o()<.5&&(c.fillRect(e/2-(r+1)*s-1,t*s-1,s+2,s+2),c.fillRect(e/2+r*s-1,t*s-1,s+2,s+2));return{sprite:c.getImageData(0,0,e,e),side:e,features:{}}};export{genererSprite};
+const genererSprite = (side, hash, anaverse) => {
+  let alphabet = "123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ";
+  let b58dec = (str) =>
+    [...str].reduce(
+      (p, c) => (p * alphabet.length + alphabet.indexOf(c)) | 0,
+      0
+    );
+  let fxhashTrunc = hash.slice(2);
+  let regex = new RegExp(".{" + ((hash.length / 4) | 0) + "}", "g");
+  let hashes = fxhashTrunc.match(regex).map((h) => b58dec(h));
+  let sfc32 = (a, b, c, d) => {
+    return () => {
+      a |= 0;
+      b |= 0;
+      c |= 0;
+      d |= 0;
+      var t = (((a + b) | 0) + d) | 0;
+      d = (d + 1) | 0;
+      a = b ^ (b >>> 9);
+      b = (c + (c << 3)) | 0;
+      c = (c << 21) | (c >>> 11);
+      c = (c + t) | 0;
+      return (t >>> 0) / 4294967296;
+    };
+  };
+  var fxrand = sfc32(...hashes);
+
+  const canvas = document.createElement("canvas");
+  canvas.width = side;
+  canvas.height = side;
+  const ctx = canvas.getContext("2d");
+
+  const features = {};
+
+  const r = fxrand;
+  //simple cube
+
+  const rint = (n) => Math.floor(r() * n);
+
+  // ------ Your sprite art starts below this line ------
+  ctx.globalCompositeOperation = "multiply";
+
+  ctx.lineWidth = side * 0.04;
+  ctx.strokeStyle = "red";
+  ctx.strokeRect(side * 0.02, side * 0.02, side * 0.94, side * 0.94);
+  ctx.strokeStyle = "cyan";
+  ctx.strokeRect(side * 0.04, side * 0.04, side * 0.94, side * 0.94);
+
+  function spriter() {
+    const definition = 10 + rint(20);
+
+    const subside = side / definition;
+    const decay = 1 + rint(3);
+
+    for (let y = 2; y < definition - 2; ++y) {
+      for (let x = 0; x < definition / 2 - 1; ++x) {
+        if (r() < 0.5 - (x * decay) / definition) {
+          ctx.fillStyle = "red";
+          ctx.fillRect(
+            side / 2 - (x + 1) * subside - 1 - side * 0.01,
+            y * subside - 1 - side * 0.01,
+            subside + 2,
+            subside + 2
+          );
+          ctx.fillRect(
+            side / 2 + x * subside - 1 - side * 0.01,
+            y * subside - 1 - side * 0.01,
+            subside + 2,
+            subside + 2
+          );
+          ctx.fillStyle = "cyan";
+          ctx.fillRect(
+            side / 2 - (x + 1) * subside - 1 + side * 0.01,
+            y * subside - 1 + side * 0.01,
+            subside + 2,
+            subside + 2
+          );
+          ctx.fillRect(
+            side / 2 + x * subside - 1 + side * 0.01,
+            y * subside - 1 + side * 0.01,
+            subside + 2,
+            subside + 2
+          );
+        }
+      }
+    }
+  }
+
+  spriter();
+
+  // ------ Your code stops above this line ------
+  const sprite = ctx.getImageData(0, 0, side, side);
+
+  return { sprite, side, features };
+};
+
+export { genererSprite };
