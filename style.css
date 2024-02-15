@@ -1738,3 +1738,6 @@ position: absolute;
 left: calc(90% - 200px);
 top: 20px;
 }
+#serverStatus{
+  padding:20px
+}
