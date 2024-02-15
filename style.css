@@ -1741,3 +1741,16 @@ top: 20px;
 #serverStatus{
   padding:20px
 }
+
+.multiUserCell{
+
+  padding: 5px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  font-size: 12px;
+
+}
+
+#chatserver{
+  width:200px
+}
