@@ -1683,6 +1683,7 @@ input[type="range"]::-ms-thumb {
   word-break: break-word;
   outline: 0px;
   border:0px;
+  pointer-events: none;
 }
 
 #messageR{
