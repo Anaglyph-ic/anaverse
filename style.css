@@ -433,8 +433,8 @@ a {
   position: absolute;
   top: 0px;
   padding:15px;
-  left: 80%;
-  z-index: 99;
+  left: calc(80% - 40px);
+  z-index: 36;
   font-family: Arial, Helvetica, sans-serif;
   opacity: 0;
   
@@ -935,6 +935,12 @@ left: calc(25% - 50px);
   left: 70px;
 }
 
+#mobile-chat-desc{
+  position: absolute;
+  top: calc(50% + 50px);
+  left: 70px;
+}
+
 #mobile-jetpack {
   position: absolute;
   top: 50%;
@@ -978,10 +984,11 @@ left: calc(25% - 50px);
   align-items: center;
   justify-content: center;
 }
-}
+
 
 
 #mobile-reset-desc{
+  width: 190px;
   position: absolute;
   top: 10px;
   left: 150px;
@@ -1693,7 +1700,7 @@ input[type="range"]::-ms-thumb {
 
 #messageDiv{
   position: absolute;
-  top:30%;
+  top:calc(100% - 335px);
   width:300px;
   height:300px;
   background-color: transparent;
@@ -1735,7 +1742,7 @@ input[type="range"]::-ms-thumb {
 
 #sendMessage{
   position: absolute;
-  top : calc(30% + 305px);
+  top : calc(100% - 30px);
   z-index: 45;
   left:5px;
   border-left:2px solid red;
