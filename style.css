@@ -1753,6 +1753,7 @@ input[type="range"]::-ms-thumb {
   background-color: transparent;
   display: none;
   outline: 0px;
+  padding-left: 5px;
 }
 
 #sendMessage:focus{
