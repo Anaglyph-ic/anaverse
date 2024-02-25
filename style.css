@@ -1770,12 +1770,18 @@ left: calc(90% - 200px);
 top: 20px;
 }
 #serverStatus{
-  padding:20px
+  padding: 20px;
+  border-collapse: collapse;
 }
 
 .multiUserCell{
   padding: 15px;
   font-size: 12px;
+  display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+
 }
 
 #chatserver{
@@ -1797,4 +1803,9 @@ top: 20px;
     border: 1px solid red;
     background: white;
     width: 50%;
+}
+
+.statusBodyLine{
+  border-top: 1px solid red;
+  background-color: white;
 }
