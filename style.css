@@ -1774,14 +1774,27 @@ top: 20px;
 }
 
 .multiUserCell{
-
-  padding: 5px;
-  border-top: 1px solid black;
-  border-left: 1px solid black;
+  padding: 15px;
   font-size: 12px;
-
 }
 
 #chatserver{
   width:200px
+}
+
+#userInfoDiv{
+  display: flex;
+  background: white;
+  border: 1px solid black;
+  width: 50%;
+  margin-left: 25px;
+  border-radius: 5px;
+}
+
+#currentServer{
+  padding: 15px;
+    margin: 15px;
+    border: 1px solid red;
+    background: white;
+    width: 50%;
 }
