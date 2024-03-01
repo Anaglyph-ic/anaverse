@@ -1813,4 +1813,25 @@ top: 20px;
 #tutorialClick{
   text-decoration: underline;
   cursor: pointer;
+  
+}
+
+.geomTab{
+  
+  color:black;
+  border-top: 1px solid black;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.geomTab:hover{
+  background-color: black;
+  color:white;
+}
+
+#previewSliderContainer{
+  margin-left:20px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
