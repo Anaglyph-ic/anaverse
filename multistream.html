@@ -16,7 +16,11 @@
         }
     </style>
 
-    <table id="serverStatus">
+    <div id="nousers" style="display:block; font-size: 9px;">No users connected
+        on the
+        mux.anaver.se server.</div>
+
+    <table id="serverStatus" style="display:none">
         <thead style="font-size: 11px;">
             <tr>
                 <th scope="col">Space</th>
@@ -113,26 +117,38 @@
 
         const socket = io("https://mux.anaver.se");
 
+
+        const nousers = document.getElementById("nousers");
+        const serverStatus = document.getElementById("serverStatus");
+
+
         const updateMultiStatus = (status) => {
             // const currentLocMap = {};
 
-            for (const location in activeLocMap) {
-                activeLocMap[location].userList = [];
-            }
-
-            for (let i = 0; i < status.length; i += 4) {
-                const name = status[i];
-                const userId = status[i + 1];
-                const spacename = status[i + 2];
-                const spaceid = status[i + 3];
-
-                if (!activeLocMap.hasOwnProperty(spaceid)) {
-                    activeLocMap[spaceid] = { spaceid, spacename, userList: [] };
+            if (status.length === 0) {
+                nousers.style.display = "block";
+                serverStatus.style.display = "none";
+            } else {
+                nousers.style.display = "none";
+                serverStatus.style.display = "block";
+                for (const location in activeLocMap) {
+                    activeLocMap[location].userList = [];
                 }
-                activeLocMap[spaceid].userList.push({ name, userId });
-            }
 
-            refreshLocationTable();
+                for (let i = 0; i < status.length; i += 4) {
+                    const name = status[i];
+                    const userId = status[i + 1];
+                    const spacename = status[i + 2];
+                    const spaceid = status[i + 3];
+
+                    if (!activeLocMap.hasOwnProperty(spaceid)) {
+                        activeLocMap[spaceid] = { spaceid, spacename, userList: [] };
+                    }
+                    activeLocMap[spaceid].userList.push({ name, userId });
+                }
+
+                refreshLocationTable();
+            }
         };
 
         socket.on(`MULTISTATUS`, (status) => updateMultiStatus(JSON.parse(status)))
