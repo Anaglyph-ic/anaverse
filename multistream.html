@@ -1,0 +1,137 @@
+<body>
+
+    <style>
+        body {
+            font-family: monospace;
+        }
+
+
+
+        .multiUserCell {
+            padding: 5px;
+            font-size: 9px;
+            display: flex;
+            flex-direction: column;
+            align-content: flex-start;
+            align-items: flex-start;
+
+        }
+    </style>
+
+    <table id="serverStatus">
+        <thead>
+            <tr>
+                <th scope="col">Space</th>
+                <th scope="col">User List</th>
+            </tr>
+        </thead>
+        <tbody id="serverStatusBody"></tbody>
+    </table>
+
+    <script type="module">
+        //import { io } from "socket.io-client";
+        import { io } from "https://cdn.socket.io/4.7.4/socket.io.esm.min.js";
+
+        const activeLocMap = {};
+
+        const refreshLocationTable = () => {
+            const table = document.getElementById("serverStatusBody");
+            if (table) {
+                document.getElementById("serverStatus").style.display = "block";
+
+                for (const loc in activeLocMap) {
+                    const location = activeLocMap[loc];
+
+                    if (location.userList.length === 0) {
+                        delete activeLocMap[loc];
+                        if (document.getElementById(loc)) {
+                            document.getElementById(loc).remove();
+                        }
+                    }
+
+                    const line = document.createElement("tr");
+                    line.id = loc;
+                    line.className = "statusBodyLine";
+                    //  line.style = "1px solid red;";
+
+                    if (document.getElementById(loc)) {
+                        const useridcase = document.getElementById(loc + "-useridcase");
+
+                        useridcase.innerHTML = "";
+                        location.userList.forEach(
+                            (u) =>
+                                (useridcase.innerHTML += `<span><strong>${u.name}</strong> - ${u.userId}`)
+                        );
+                    } else if (location.userList.length > 0) {
+                        const thbcase = document.createElement("td");
+
+                        const spaceID = location.spaceid.split("/");
+
+                        const space = {};
+
+                        space.chain = spaceID[0];
+                        space.contract = spaceID[1];
+                        space.token_id = spaceID[2];
+                        space.spacename = location.spacename;
+                        space.spaceid = location.spaceid;
+                        space.gentk = { type: "world" };
+
+                        if (space.chain === "tutorial") {
+                            space.chain = "tezos";
+                        }
+
+
+                        if (space.chain === "tezos") {
+                            const img = new Image(50);
+                            img.style = "cursor:pointer"
+                            img.src = `https://assets.objkt.media/file/assets-003/${space.contract}/${space.token_id}/thumb288`;
+                            thbcase.append(img);
+                        }
+
+                        //                        thbcase.append(generateThumbnail(space, "joinSpace"));
+                        thbcase.style = "padding: 15px;";
+
+                        const useridcase = document.createElement("td");
+                        useridcase.id = loc + "-useridcase";
+                        useridcase.className = "multiUserCell";
+                        location.userList.forEach(
+                            (u) =>
+                                (useridcase.innerHTML += `<span><strong>${u.name}</strong> - ${u.userId}`)
+                        );
+
+                        line.append(thbcase, useridcase);
+
+                        table.append(line);
+                    }
+                }
+            }
+        };
+
+        const socket = io("https://mux.anaver.se");
+
+        const updateMultiStatus = (status) => {
+            // const currentLocMap = {};
+
+            for (const location in activeLocMap) {
+                activeLocMap[location].userList = [];
+            }
+
+            for (let i = 0; i < status.length; i += 4) {
+                const name = status[i];
+                const userId = status[i + 1];
+                const spacename = status[i + 2];
+                const spaceid = status[i + 3];
+
+                if (!activeLocMap.hasOwnProperty(spaceid)) {
+                    activeLocMap[spaceid] = { spaceid, spacename, userList: [] };
+                }
+                activeLocMap[spaceid].userList.push({ name, userId });
+            }
+
+            refreshLocationTable();
+        };
+
+        socket.on(`MULTISTATUS`, (status) => updateMultiStatus(JSON.parse(status)))
+    </script>
+
+</body>
