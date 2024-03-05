@@ -83,6 +83,9 @@
                             const img = new Image(50);
                             img.style = "cursor:pointer"
                             img.src = `https://assets.objkt.media/file/assets-003/${space.contract}/${space.token_id}/thumb288`;
+                            if (space.spaceid === "tutorial") {
+                                img.src = "https://assets.objkt.media/file/assets-003/KT1D868VUoMPJpvRqsP9aLpFAne16bT1nL3g/1/thumb288"
+                            }
                             img.addEventListener("click", () => {
                                 window.open(`https://anaver.se/?loadroom=${location.spaceid}`, "_blank")
                             })
