@@ -5,8 +5,6 @@
             font-family: monospace;
         }
 
-
-
         .multiUserCell {
             padding: 5px;
             font-size: 9px;
@@ -19,7 +17,7 @@
     </style>
 
     <table id="serverStatus">
-        <thead>
+        <thead style="font-size: 11px;">
             <tr>
                 <th scope="col">Space</th>
                 <th scope="col">User List</th>
@@ -29,7 +27,7 @@
     </table>
 
     <script type="module">
-        //import { io } from "socket.io-client";
+
         import { io } from "https://cdn.socket.io/4.7.4/socket.io.esm.min.js";
 
         const activeLocMap = {};
@@ -85,6 +83,9 @@
                             const img = new Image(50);
                             img.style = "cursor:pointer"
                             img.src = `https://assets.objkt.media/file/assets-003/${space.contract}/${space.token_id}/thumb288`;
+                            img.addEventListener("click", () => {
+                                window.open(`https://anaver.se/?loadroom=${location.spaceid}`, "_blank")
+                            })
                             thbcase.append(img);
                         }
 
