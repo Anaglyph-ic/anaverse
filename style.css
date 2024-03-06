@@ -1766,8 +1766,8 @@ input[type="range"]::-ms-thumb {
 border-radius: 5px;
 border: 1px solid black;
 position: absolute;
-left: calc(90% - 200px);
-top: 20px;
+left: calc(50% - 144px);
+top: calc(30% - 144px);
 }
 #serverStatus{
   padding: 20px;
@@ -1778,10 +1778,9 @@ top: 20px;
   padding: 15px;
   font-size: 12px;
   display: flex;
-    flex-direction: column;
-    align-content: flex-start;
-    align-items: flex-start;
-
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: flex-start;
 }
 
 #chatserver{
