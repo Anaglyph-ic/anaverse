@@ -1488,6 +1488,7 @@ input[type="range"]::-ms-thumb {
   font-size: 12px;
   overflow-y: scroll;
   max-height: 190px;
+  scrollbar-width: none;
 }
 
 #artwork-mime-type{
