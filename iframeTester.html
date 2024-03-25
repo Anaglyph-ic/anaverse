@@ -1,42 +1,60 @@
 <!DOCTYPE html>
 <html>
 
-<body style="display: flex;flex-direction: column;align-items: center;">
-    <form>
-        <input type="text" id="contract" placeholder="contract">
-        <input type="text" id="tokenid" placeholder="token_id">
-        <button type="text" id="load" value="load">load</button>
-    </form>
-    <hr>
-    <iframe id="anavframe" style="border:0px;width:800px;height:600px"></iframe>
-    <hr>
-    <div id="address" style="padding:5px;border:1px solid black; font-family:
-        monospace;"></div>
+<body style="display: flex; flex-direction: column; align-items: center">
+  <form>
+    <input type="text" id="tezoscontract" placeholder="tezos contract" />
+    <input type="text" id="tezostokenid" placeholder="tezos token_id" />
+    <button type="text" id="tezosload" value="load">load tezos asset</button>
+    <br><br>
+    <input type="text" id="solanacontract" placeholder="solana contract" />
+
+    <button type="text" id="solanaload" value="load">load solana asset</button>
+  </form>
+  <hr />
+  <iframe id="anavframe"
+    style="border: 0px; width: 800px; height: 600px"></iframe>
+  <hr />
+  <div id="address"
+    style="padding: 5px; border: 1px solid black; font-family: monospace"></div>
+
+  <script>
+    // console.log(window.location.origin)
+
+    const tokenid = document.getElementById("tezostokenid");
+
+    const contract = document.getElementById("tezoscontract");
 
 
-    <script>
 
-        console.log(window.location.origin)
-
-        const tokenid = document.getElementById("tokenid")
-
-        const contract = document.getElementById("contract")
-        document.getElementById("load").addEventListener("click", (e) => {
-            e.preventDefault()
-            const target = `${window.location.origin}/?gallery=1&loadsingle=1&singlecontract=${contract.value}&singletokenid=${tokenid.value}`
-            document.getElementById("address").innerText = `<iframe
+    document.getElementById("tezosload").addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = `${window.location.origin}/?gallery=1&loadsingle=1&singlecontract=${contract.value}&singletokenid=${tokenid.value}`;
+      document.getElementById("address").innerText = `<iframe
 
              src="${target}"
 
              style="border:0px;width:800px;height:600px"
 
              /> `;
-            document.getElementById("anavframe").src = target;
+      document.getElementById("anavframe").src = target;
+    });
 
-        })
 
+    const solanaContract = document.getElementById("solanacontract");
+    document.getElementById("solanaload").addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = `${window.location.origin}/?gallery=1&loadsingle=1&singlecontract=${solanaContract.value}&singletokenchain=solana`;
+      document.getElementById("address").innerText = `<iframe
 
-    </script>
+             src="${target}"
+
+             style="border:0px;width:800px;height:600px"
+
+             /> `;
+      document.getElementById("anavframe").src = target;
+    });
+  </script>
 </body>
 
 </html>
